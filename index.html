@@ -144,5 +144,163 @@
       </div>
     </section>
 </body>
-<script src="clock.js"></script>
+<script>
+
+    let m = document.getElementById("min");
+    let mm = document.getElementById("mul");
+    let co = document.getElementById("add");
+    let d = document.getElementById("div");
+    function add(){
+        m.classList.remove('red');
+        mm.classList.remove('red');
+        d.classList.remove('red');
+        console.log(co);
+        co.classList.add('red');
+        
+        var x = document.getElementById("a").value;
+        console.log(x);
+        var y = document.getElementById("b").value;
+        console.log(y);
+        n1 = parseInt(x)
+        n2 = parseInt(y)
+        console.log(n1+n2);
+        var n3 = n1+n2;
+        document.getElementById("ans").innerHTML = n3;
+    }
+    function min(){
+        co.classList.remove('red');
+        mm.classList.remove('red');
+        d.classList.remove('red');
+        console.log(m);
+        m.classList.add('red');
+        var x = document.getElementById("a").value;
+        console.log(x);
+        var y = document.getElementById("b").value;
+        console.log(y);
+        n1 = parseInt(x)
+        n2 = parseInt(y)
+        console.log(n1-n2);
+        var n3 = n1-n2;
+        document.getElementById("ans").innerHTML = n3;
+    }
+    function mul(){        
+    m.classList.remove('red');
+    co.classList.remove('red');
+    d.classList.remove('red');
+        console.log(mm);
+        mm.classList.add('red');
+        var x = document.getElementById("a").value;
+        console.log(x);
+        var y = document.getElementById("b").value;
+        console.log(y);
+        n1 = parseInt(x)
+        n2 = parseInt(y)
+        console.log(n1*n2);
+        var n3 = n1*n2;
+        document.getElementById("ans").innerHTML = n3;
+    }
+    function div(){
+        m.classList.remove('red');
+        mm.classList.remove('red');
+        co.classList.remove('red');
+        console.log(d);
+        d.classList.add('red');
+        var x = document.getElementById("a").value;
+        console.log(x);
+        var y = document.getElementById("b").value;
+        console.log(y);
+        n1 = parseInt(x)
+        n2 = parseInt(y)
+        console.log(n1/n2);
+        var n3 = n1/n2;
+        document.getElementById("ans").innerHTML = n3;
+    }
+    
+    //like dislike js
+    like = ()=>{
+      let d = document.getElementById('didi');
+      let l = document.getElementById('lili');
+      console.log('main = '+l.innerText);
+      if(l.innerText == 'like'){
+          console.log("unlike kara");
+          l.classList.remove('hi');
+          l.classList.add('un');
+          l.innerText = 'unlike'
+      }else if(l.innerText == 'unlike' ){
+          if(d.innerText == 'dislike'){
+          d.classList.remove('hi');
+          d.classList.add('un');
+          d.innerText = 'undislike'
+          }console.log("like kara");
+          l.innerText = 'like'
+          l.classList.remove('un');
+          l.classList.add('hi');
+      }
+      
+  }
+  dislike = ()=>{
+      let d = document.getElementById('didi');
+      let l = document.getElementById('lili');
+      console.log('main = '+d.innerText);
+      if(d.innerText == 'dislike'){
+          console.log("undislike kara");
+          d.classList.remove('hi');
+          d.classList.add('un');
+          d.innerText = 'undislike'
+      }else if(d.innerText == 'undislike'){
+          if(l.innerText == 'like'){
+              l.classList.remove('hi');
+              l.classList.add('un');
+              l.innerText = 'unlike'
+          }console.log("dislike kara");
+          d.classList.remove('un');
+          d.classList.add('hi');
+          d.innerText = 'dislike'
+      }
+}
+
+//    clock javascript code go here ----------------------------------------------
+setInterval(function(){ 
+  let t = new Date();
+  n = (t.getHours())
+  mm = (t.getMinutes())
+  ss = (t.getSeconds())
+  if(n>12){ 
+    hh = h12(n);
+    document.getElementById('hh').innerHTML=hh;
+  }else{
+    document.getElementById('hh').innerHTML=n;
+  }
+  console.log('h12 is here : '+h12(n));
+  console.log('hh is here : '+hh);
+  tt = ampm(n);
+  // console.log(t.getHours());  
+  // console.log(t.getMinutes());  
+  // console.log(t.getSeconds());
+  document.getElementById('mm').innerHTML=mm;
+document.getElementById('ss').innerHTML=ss;
+document.getElementById('tt').innerHTML=tt;
+}, 1000);
+
+// 12 hours formate logic here
+h12 = (h)=>{
+  if(h>12){
+      r=h-12;
+      return r
+    }
+  }
+  // Am Pm logic here
+  ampm = (hhh)=>{
+    //q=parseInt(hhh);
+    //console.log('q is here : '+q)
+    if(hhh==12&&mm>0){
+      return 'PM';
+    }
+    else if(hhh>12){
+      return 'PM';
+    }else{
+      return 'AM';
+    }
+  }
+</script>
 </html>
