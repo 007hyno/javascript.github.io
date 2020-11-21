@@ -1,0 +1,20 @@
+.red{
+    font-size: 18px;
+    background : rgba(114, 180, 255, 0.904);
+    color:rgb(247, 242, 242);
+    margin-bottom: 0px;
+    }
+    .un{ background : rgba(255, 255, 255, 0.904); 
+      color:rgb(214, 214, 214); 
+      } 
+  .hi{ background : rgba(29, 250, 184, 0.904);
+      color:rgb(238, 238, 238); 
+      }
+  .btn{
+    padding-left: 4px;
+    padding-right: 4px;
+    padding: 2px;
+  }
+  .btn:hover{
+    border-bottom: 2px solid rgb(255, 75, 75);
+  }
