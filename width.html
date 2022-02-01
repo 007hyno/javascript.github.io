@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Width-</title>
+</head>
+<body>
+    <div id="demo">
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+<script>
+    var width = $(window).width();
+    $("#demo").text(`Screen width is - ${width}`)
+    $(window).resize(function(){
+        if($(this).width() != width){
+            width = $(this).width();
+            $("#demo").text(`Screen width is - ${width}`)
+       console.log(width);
+   }
+});
+</script>
+</html>
