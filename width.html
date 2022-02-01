@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,17 +9,23 @@
 </head>
 <body>
     <div id="demo">
+        </div>
+    <div id="demo2">
     </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
 <script>
     var width = $(window).width();
+    var height = $(window).height();
     $("#demo").text(`Screen width is - ${width}`)
+    $("#demo2").text(`Screen height is - ${height}`)
     $(window).resize(function(){
-        if($(this).width() != width){
+        if($(this).width() != width||$(this).height() != height){
             width = $(this).width();
             $("#demo").text(`Screen width is - ${width}`)
-       console.log(width);
+            $("#demo2").text(`Screen height is - ${height}`)
+       console.log("w - "+width);
+       console.log("h - "+height);
    }
 });
 </script>
